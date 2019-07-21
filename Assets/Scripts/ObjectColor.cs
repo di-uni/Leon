@@ -9,6 +9,8 @@ public class ObjectColor : MonoBehaviour
 		Material mt = new Material(GetComponent<Renderer>().sharedMaterial);
 		mt.color = color;
 		GetComponent<Renderer>().material = mt;
+		Debug.Log(mt+"this is material");
+		Debug.Log(color+"this is color");
 	}
 
 	void OnGetColor(ColorPicker picker)

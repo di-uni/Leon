@@ -8,13 +8,23 @@ public class ColorPicker : MonoBehaviour {
 	public string Title = "Color Picker";
 	public Vector2 startPos = new Vector2(20, 20);
 	public GameObject receiver;
+
+	public GameObject receiver1;
+
+	public GameObject receiver2;
+
+	public GameObject receiver3;
+
 	public string colorSetFunctionName = "OnSetNewColor";
 	public string colorGetFunctionName = "OnGetColor";
 	public bool useExternalDrawer = false;
 	public int drawOrder = 0;
 
+	private TileManager tileManager= new TileManager();
+
+
 	private Color TempColor; 
-	private Color SelectedColor;
+	public Color SelectedColor;
 
 	static ColorPicker activeColorPicker = null;
 
@@ -58,6 +68,9 @@ public class ColorPicker : MonoBehaviour {
 		if(receiver)
 		{
 			receiver.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
+			receiver1.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
+			receiver2.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
+			receiver3.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
@@ -148,6 +161,9 @@ public class ColorPicker : MonoBehaviour {
 				if(receiver)
 				{
 					receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+					receiver1.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+					receiver2.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+					receiver3.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 				}
 			}
 
@@ -296,6 +312,18 @@ public class ColorPicker : MonoBehaviour {
 		if(receiver)
 		{
 			receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+			receiver1.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+			receiver2.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+			receiver3.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+			//Debug.Log(SelectedColor);
 		}
 	}
+
+	void Update(){
+		if(Input.GetKeyDown("space")){
+			Vector3 position = GameObject.FindGameObjectWithTag("Player").transform.position;
+            // Debug.Log(SelectedColor+"this is color");
+            tileManager.CheckColor(SelectedColor,position);
+        }
+    }
 }
