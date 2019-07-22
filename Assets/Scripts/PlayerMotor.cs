@@ -6,8 +6,8 @@ public class PlayerMotor : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 moveVector;
-    
-    private float speed =6.0f;
+    private int count = 0;
+    private float speed =8.0f;
     private float verticalVelocity = 0.0f;
     private float gravity = 12.0f;
     private float animationDuration = 3.0f;
@@ -18,6 +18,7 @@ public class PlayerMotor : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         startTime = Time.time;
+        moveVector.z= speed;
     }
 
     // Update is called once per frame
@@ -27,10 +28,12 @@ public class PlayerMotor : MonoBehaviour
         if (isDead)
             return;
         if (Time.time - startTime < animationDuration) {
-            controller.Move(Vector3.forward*speed*Time.deltaTime);
+            controller.Move((Vector3.forward)*speed*Time.deltaTime);
             return;
         }
-        moveVector = Vector3.zero;
+        if(GameObject.FindGameObjectWithTag("Player").transform.position.y<-30) {
+            Death();
+        }
 
         if(controller.isGrounded) {
             verticalVelocity = -0.5f;
@@ -38,10 +41,25 @@ public class PlayerMotor : MonoBehaviour
         else {
             verticalVelocity -= gravity * Time.deltaTime;
         }
-        moveVector.x = Input.GetAxisRaw("Horizontal")*speed;
-        moveVector.y = verticalVelocity;
-        moveVector.z=speed;
+        // change for touchscreen
+        if(moveVector.z != 0)
+        {
+            moveVector.x = Input.GetAxisRaw("Horizontal")*speed;
+            moveVector.y = verticalVelocity;
+        }
+        if(Input.GetKeyDown(KeyCode.X) && moveVector.z != 0)
+        {        
+            moveVector = Vector3.zero;
+        }
+        else if(Input.GetKeyDown(KeyCode.X) && moveVector.z == 0)
+        {
+            moveVector.z= speed;
+        }
+        
+        
         controller.Move(moveVector * Time.deltaTime);
+
+        
     }
     public void SetSpeed(float modifier)
     {
@@ -51,17 +69,18 @@ public class PlayerMotor : MonoBehaviour
     //충돌, 숨을떄 쓴다
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.point.z > transform.position.z+ 0.1f && hit.gameObject.tag == "Enemy")
+        if(hit.gameObject.tag == "Enemy")
             Death();
-
+        
         if(hit.gameObject.tag=="Empty"){
+            //Debug.Log("sdfsjlfjs");
             if(Input.GetKeyDown("space")){
                 Color blockcolor = hit.gameObject.GetComponentInParent<MeshRenderer>().material.color;
                 //Debug.Log(blockcolor);
                 ColorPicker colorPicker = new ColorPicker();
                 colorPicker.CompareColor(blockcolor);
             }
-        }    
+        }        
     }
 
 
@@ -70,4 +89,6 @@ public class PlayerMotor : MonoBehaviour
         isDead = true;
         GetComponent<Score>().OnDeath();
     }
+
+    
 }

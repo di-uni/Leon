@@ -1,25 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class TileManager : MonoBehaviour
 {
     public GameObject[] tilePrefabs;
-    public static Transform playerTransform;
-    public static float spawnZ = -6.4f;
-    public static float tileLength = 6.4f;
+    private Transform playerTransform;
+    private float spawnZ = -6.4f;
+    private float tileLength = 6.4f;
     private float safeZone =10.0f;
-    public static int amnTilesOnScreen = 10;
+    private int amnTilesOnScreen = 10;
     private int lastPrefabIndex =0;
-    public static Color rancolor = new Color();
     
 
-    public static List<GameObject> activeTiles= new List<GameObject>();
+    private List<GameObject> activeTiles;
     // Start is called before the first frame update
     private void Start()
     {
-        //activeTiles = new List<GameObject>();
+        activeTiles = new List<GameObject>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         
         for(int i =0; i< amnTilesOnScreen; i++){
@@ -35,7 +33,6 @@ public class TileManager : MonoBehaviour
     private void Update()
     {
         if((playerTransform.position.z-safeZone) > (spawnZ - amnTilesOnScreen *tileLength)){
-
             SpawnTile();
             DeleteTile();
         }
@@ -43,8 +40,6 @@ public class TileManager : MonoBehaviour
 
     private void SpawnTile(int prefabIndex = -1)
     {
-        
-
         GameObject go;
         if(prefabIndex == -1)
             go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
@@ -74,5 +69,4 @@ public class TileManager : MonoBehaviour
         lastPrefabIndex = randomIndex;
         return randomIndex;
     }
-    
 }
