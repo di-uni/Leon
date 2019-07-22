@@ -75,6 +75,8 @@
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\TileManager.cs" />
      <None Include="Assets\AurynSky\Forest Pack\READ ME.txt" />
+     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Unlit.shader" />
+     <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Basic.shader" />
      <None Include="Assets\SkySerie Freebie\Hdri setup.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/ q/week4_madcamp/Leon/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
