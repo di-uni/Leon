@@ -13,7 +13,6 @@ public class ColorPicker : MonoBehaviour {
 
 	public GameObject receiver2;
 
-	public GameObject receiver3;
 
 	public string colorSetFunctionName = "OnSetNewColor";
 	public string colorGetFunctionName = "OnGetColor";
@@ -70,7 +69,6 @@ public class ColorPicker : MonoBehaviour {
 			receiver.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
 			receiver1.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
 			receiver2.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
-			receiver3.SendMessage(colorGetFunctionName, this, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 
@@ -163,7 +161,6 @@ public class ColorPicker : MonoBehaviour {
 					receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 					receiver1.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 					receiver2.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
-					receiver3.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 				}
 			}
 
@@ -314,7 +311,6 @@ public class ColorPicker : MonoBehaviour {
 			receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 			receiver1.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 			receiver2.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
-			receiver3.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 			//Debug.Log(SelectedColor);
 		}
 	}

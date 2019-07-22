@@ -6,20 +6,20 @@ using System.Collections.Generic;
 public class TileManager : MonoBehaviour
 {
     public GameObject[] tilePrefabs;
-    private Transform playerTransform;
-    private float spawnZ = -6.4f;
-    private float tileLength = 6.4f;
+    public static Transform playerTransform;
+    public static float spawnZ = -6.4f;
+    public static float tileLength = 6.4f;
     private float safeZone =10.0f;
-    private int amnTilesOnScreen = 10;
+    public static int amnTilesOnScreen = 10;
     private int lastPrefabIndex =0;
     public static Color rancolor = new Color();
     
 
-    private List<GameObject> activeTiles;
+    public static List<GameObject> activeTiles= new List<GameObject>();
     // Start is called before the first frame update
     private void Start()
     {
-        activeTiles = new List<GameObject>();
+        //activeTiles = new List<GameObject>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         
         for(int i =0; i< amnTilesOnScreen; i++){
@@ -35,6 +35,7 @@ public class TileManager : MonoBehaviour
     private void Update()
     {
         if((playerTransform.position.z-safeZone) > (spawnZ - amnTilesOnScreen *tileLength)){
+
             SpawnTile();
             DeleteTile();
         }
@@ -42,6 +43,8 @@ public class TileManager : MonoBehaviour
 
     private void SpawnTile(int prefabIndex = -1)
     {
+        
+
         GameObject go;
         if(prefabIndex == -1)
             go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
@@ -51,9 +54,6 @@ public class TileManager : MonoBehaviour
         go.transform.position = Vector3.forward * spawnZ;
         spawnZ += tileLength;
         activeTiles.Add(go);
-        if(activeTiles.Count>=5){
-        rancolor= activeTiles[3].GetComponent<MeshRenderer>().material.color;
-        }
     }
 
     private void DeleteTile() {
@@ -76,7 +76,15 @@ public class TileManager : MonoBehaviour
     }
 
     public void CheckColor(Color color ,Vector3 position){
-        Debug.Log(position);
+        if(activeTiles.Count>=10){
+            int behind= (int) (playerTransform.position.z/tileLength);
+            int forward = (int) (spawnZ/tileLength);
+            //Debug.Log(behind+"counting");
+            int currentTile = amnTilesOnScreen-(forward-behind)+1;
+            rancolor= activeTiles[currentTile].GetComponent<MeshRenderer>().material.color;
+            Debug.Log(currentTile);
+        }
+
         float red =color.r;
         float green=color.g;
         float blue = color.b;
@@ -90,6 +98,7 @@ public class TileManager : MonoBehaviour
         Debug.Log(distance);
         if(distance<24){Debug.Log("Matched");}
         else Debug.Log("Not matched");
+        Debug.Log(activeTiles.Count+"this is tile");
     }
     
     static float Gamma(float x){
