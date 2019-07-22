@@ -53,7 +53,17 @@ public class PlayerMotor : MonoBehaviour
     {
         if(hit.point.z > transform.position.z+ 0.1f && hit.gameObject.tag == "Enemy")
             Death();
+
+        if(hit.gameObject.tag=="Empty"){
+            if(Input.GetKeyDown("space")){
+                Color blockcolor = hit.gameObject.GetComponentInParent<MeshRenderer>().material.color;
+                //Debug.Log(blockcolor);
+                ColorPicker colorPicker = new ColorPicker();
+                colorPicker.CompareColor(blockcolor);
+            }
+        }    
     }
+
 
     private void Death()
     {

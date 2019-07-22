@@ -23,7 +23,7 @@ public class ColorPicker : MonoBehaviour {
 
 
 	private Color TempColor; 
-	public Color SelectedColor;
+	public static Color SelectedColor;
 
 	static ColorPicker activeColorPicker = null;
 
@@ -316,10 +316,59 @@ public class ColorPicker : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Input.GetKeyDown("space")){
-			Vector3 position = GameObject.FindGameObjectWithTag("Player").transform.position;
-            // Debug.Log(SelectedColor+"this is color");
-            tileManager.CheckColor(SelectedColor,position);
-        }
+		
+		// if(Input.GetKeyDown("space")){
+		// 	Vector3 position = GameObject.FindGameObjectWithTag("Player").transform.position;
+        //     // Debug.Log(SelectedColor+"this is color");
+        //     //tileManager.CheckColor(SelectedColor,position);
+		// 	PlayerMotor playerMotor = new PlayerMotor();
+		// 	playerMotor.CheckColor(SelectedColor,position);
+        // }
+    }
+
+	public void CompareColor(Color blockcolor){
+		float red =SelectedColor.r;
+        float green=SelectedColor.g;
+        float blue = SelectedColor.b;
+        float red2 = blockcolor.r;
+        float green2 =blockcolor.g;
+        float blue2 =blockcolor.b;
+        float[] colorLab = rgb2lab(red,green,blue);
+        float[] ranLab = rgb2lab(red2,green2,blue2);
+        float distance =Mathf.Sqrt(Mathf.Pow((colorLab[0]-ranLab[0]),2f)+ Mathf.Pow((colorLab[1]-ranLab[1]),2f)+ Mathf.Pow((colorLab[2]-ranLab[2]),2f));
+        
+        Debug.Log(distance);
+        if(distance<24){Debug.Log("Matched");}
+        else Debug.Log("Not matched");
+        //Debug.Log(activeTiles.Count+"this is tile");
+    }
+    
+    static float Gamma(float x){
+        return x>0.04045f ? Mathf.Pow((x+0.055f)/1.055f,2.4f): x/ 12.92f;
+
+    }
+
+    public static float[] rgb2lab(float var_R, float var_G, float var_B){
+        float[] arr = new float[3];
+        float B = Gamma(var_B);
+        float G = Gamma(var_G);
+        float R = Gamma(var_R);
+        float X = 0.412453f * R + 0.357580f *G + 0.180423f *B;
+        float Y = 0.212671f * R + 0.715160f *G + 0.072169f *B;
+        float Z = 0.019334f * R + 0.119193f *G + 0.950227f *B;
+
+        X/= 0.95047f;
+        Y/= 1.0f;
+        Z/= 1.08883f;
+
+        float FX =X>0.008856f ? Mathf.Pow(X, 1.0f / 3.0f) : (7.787f * X + 0.137931f);
+        float FY =Y>0.008856f ? Mathf.Pow(Y, 1.0f / 3.0f) : (7.787f * Y + 0.137931f);
+        float FZ =Z>0.008856f ? Mathf.Pow(Z, 1.0f / 3.0f) : (7.787f * Z + 0.137931f);
+
+        arr[0] = Y > 0.008856f ? (116.0f * FY -16.0f) : (903.3f *Y);
+        arr[1] = 500f * (FX-FY);
+        arr[2] = 200f * (FY-FZ);
+        
+        return arr;
     }
 }
