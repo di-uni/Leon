@@ -2,8 +2,8 @@ Android
 PlayerPath?
 C:/Users/ q/week4_madcamp/Leon/build.apk
 SceneListBegin?
-Assets/Scenes/Menu.unity
-Assets/Scenes/LeonPrac.unity
+Assets/_Scenes/Menu.unity
+Assets/_Scenes/LeonPrac.unity
 SceneListEnd?
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Rotator
 86574ae73a2767cdc2e31466864f19be Assembly-CSharp.dll:.ColorPicker
@@ -179,3 +179,4 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
+659d6ceab26f9e4237abaaf29249f293 Assembly-CSharp.dll:.AnimatorController

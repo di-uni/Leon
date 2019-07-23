@@ -16,15 +16,15 @@ public class Score : MonoBehaviour
     public DeathMenu deathMenu;
 
     // Update is called once per frame
-    void Update()
+ void Update()
     {
-
         if (isDead)
             return;
         if(score >= scoreToNextLevel)
             LevelUp();
+        // //score += Time.deltaTime * difficultyLevel;
+        score = GameObject.FindGameObjectWithTag("Player").transform.position.z/6.4f;
 
-        score += Time.deltaTime * difficultyLevel;
         scoreText.text = ((int)score).ToString();
     }
 

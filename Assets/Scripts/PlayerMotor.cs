@@ -31,10 +31,11 @@ public class PlayerMotor : MonoBehaviour
             controller.Move((Vector3.forward)*speed*Time.deltaTime);
             return;
         }
-        if(GameObject.FindGameObjectWithTag("Player").transform.position.y<-30) {
+        // dead when fall
+        if(GameObject.FindGameObjectWithTag("Player").transform.position.y<-20) {
             Death();
         }
-
+        // gravity
         if(controller.isGrounded) {
             verticalVelocity = -0.5f;
         }
@@ -46,18 +47,30 @@ public class PlayerMotor : MonoBehaviour
         {
             moveVector.x = Input.GetAxisRaw("Horizontal")*speed;
             moveVector.y = verticalVelocity;
+            if (Input.GetMouseButton (0)){
+                if ((Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > Screen.height /4) || (Input.mousePosition.x > 2* Screen.width / 3 && Input.mousePosition.y < Screen.height /4)){
+                    moveVector.x = speed;
+                }
+                else if ((Input.mousePosition.x < Screen.width / 2 && Input.mousePosition.y > Screen.height / 4) || (Input.mousePosition.x < Screen.width / 3 && Input.mousePosition.y < Screen.height /4))
+                {
+                    moveVector.x = -speed;
+                }
+            }
         }
-        if(Input.GetKeyDown(KeyCode.X) && moveVector.z != 0)
-        {        
-            moveVector = Vector3.zero;
+
+        if (Input.GetMouseButtonDown (0)){
+            if(Input.mousePosition.y < Screen.height / 4 && Input.mousePosition.x > Screen.width / 3 && Input.mousePosition.x < 2 * Screen.width / 3 && moveVector.z != 0)
+            {        
+                moveVector = Vector3.zero;
+            }
+            else if(Input.mousePosition.y < Screen.height / 4 && Input.mousePosition.x > Screen.width / 3 && Input.mousePosition.x < 2 * Screen.width / 3 && moveVector.z == 0)
+            {
+                moveVector.z= speed;
+            }
         }
-        else if(Input.GetKeyDown(KeyCode.X) && moveVector.z == 0)
-        {
-            moveVector.z= speed;
-        }
-        
-        
+
         controller.Move(moveVector * Time.deltaTime);
+
 
         
     }
