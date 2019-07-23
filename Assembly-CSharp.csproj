@@ -69,6 +69,8 @@
      <Compile Include="Assets\Scripts\CompareColor.cs" />
      <Compile Include="Assets\Scripts\DeathMenu.cs" />
      <Compile Include="Assets\Scripts\DrawGUIOrderColorPicker.cs" />
+     <Compile Include="Assets\Scripts\EnemyMotor.cs" />
+     <Compile Include="Assets\Scripts\Freeeze.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\ObjectColor.cs" />
      <Compile Include="Assets\Scripts\ObjectColorSev.cs" />

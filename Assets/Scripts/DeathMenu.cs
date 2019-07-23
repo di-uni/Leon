@@ -8,13 +8,17 @@ public class DeathMenu : MonoBehaviour
 {
     public Text scoreText;
     public Image backgroundImg;
+    //MeshRenderer background;
 
     private bool isShowned = false;
-    private float transition = 0.0f;
+    private float transition = 0.5f;
+
+    private Sprite newSprite;
     // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(false);
+        //MeshRenderer background = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -24,7 +28,9 @@ public class DeathMenu : MonoBehaviour
             return;
         
         transition += Time.deltaTime;
-        backgroundImg.color = Color.Lerp(new Color(0,0,0,0),Color.black,transition);
+        // backgroundImg= GetComponent<Image>();
+
+        // backgroundImg.color = Color.Lerp(backgroundImg.color,new Color(0,0,0,0), transition);
     }
 
     public void ToggleEndMenu(float score)

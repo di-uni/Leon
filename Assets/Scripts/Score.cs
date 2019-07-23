@@ -36,6 +36,7 @@ public class Score : MonoBehaviour
         difficultyLevel++;
 
         GetComponent<PlayerMotor>().SetSpeed(difficultyLevel);
+        GetComponent<EnemyMotor>().SetSpeed(difficultyLevel);
     }
 
     public void OnDeath()
