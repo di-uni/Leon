@@ -90,6 +90,7 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlayerMotor
 47f99477fb1db58821b3374d502a66d4 Assembly-CSharp.dll:.DrawGUIOrderColorPicker
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.movecam
+73b6aae29d0a63b8f216ced1c50ff5f6 Assembly-CSharp.dll:.ZombieCharacterControl
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 780e8f682b3221346c034a6712a0fd25 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -121,14 +122,17 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 9669178b8ee47e79141ed8519e9595fb Assembly-CSharp.dll:.MaterialMover
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GM
+74d4f46ea42ab5b09df82a8483df32a1 Assembly-CSharp.dll:.ZombieFree
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 cca3bdaad4fe98e63b6fb6e83be1de15 Assembly-CSharp.dll:.MouseLook
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ObjectColorSev
+659d6ceab26f9e4237abaaf29249f293 Assembly-CSharp.dll:.AnimatorController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CompareColor
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.cameraMotor
+83553340546b889da127a76ed9235c2b Assembly-CSharp.dll:.ZombieCameraLogic
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ObjectColor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
@@ -179,4 +183,3 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-659d6ceab26f9e4237abaaf29249f293 Assembly-CSharp.dll:.AnimatorController

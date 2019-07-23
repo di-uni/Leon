@@ -75,9 +75,9 @@
      <Compile Include="Assets\Scripts\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\TileManager.cs" />
-     <Compile Include="Assets\torch\scene\script\TorchSlider.cs" />
-     <Compile Include="Assets\torch\scene\script\Torchslider2.cs" />
-     <Compile Include="Assets\torch\scripts\Torchelight.cs" />
+     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCameraLogic.cs" />
+     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCharacterControl.cs" />
+     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieFree.cs" />
      <None Include="Assets\AurynSky\Forest Pack\READ ME.txt" />
      <None Include="Assets\JKT_ART\etc\MatCap.shader" />
      <None Include="Assets\Catgear Games\Model Pack 1\Kiwi\README.txt" />
@@ -85,7 +85,6 @@
      <None Include="Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Basic.shader" />
      <None Include="Assets\Catgear Games\Model Pack 1\Chili\README.txt" />
      <None Include="Assets\Catgear Games\Model Pack 1\Eggy\README.txt" />
-     <None Include="Assets\torch\readme.txt" />
      <None Include="Assets\Catgear Games\Model Pack 1\Langsat\README.txt" />
      <None Include="Assets\SkySerie Freebie\Hdri setup.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
