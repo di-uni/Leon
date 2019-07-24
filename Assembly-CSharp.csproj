@@ -64,6 +64,7 @@
      <Compile Include="Assets\AurynSky\Forest Pack\Scripts\Rotator.cs" />
      <Compile Include="Assets\AurynSky\Forest Pack\Scripts\WheelController.cs" />
      <Compile Include="Assets\Scripts\AnimatorController.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\cameraMotor.cs" />
      <Compile Include="Assets\Scripts\cameraMotor2.cs" />
      <Compile Include="Assets\Scripts\ColorPicker.cs" />
@@ -77,6 +78,7 @@
      <Compile Include="Assets\Scripts\ObjectColorSev.cs" />
      <Compile Include="Assets\Scripts\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\Sound.cs" />
      <Compile Include="Assets\Scripts\TileManager.cs" />
      <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCameraLogic.cs" />
      <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCharacterControl.cs" />

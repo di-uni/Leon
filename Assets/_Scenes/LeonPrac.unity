@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.02933015, g: 0.078089185, b: 0.16787103, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ShowResolutionOverlay: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 14180520}
   - component: {fileID: 14180516}
   m_Layer: 8
-  m_Name: Enemy (1)
+  m_Name: Enemy2
   m_TagString: Spaceman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,6 +1107,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b2bd8789218bf4eb7c5c91c2672c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &503118667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503118669}
+  - component: {fileID: 503118668}
+  m_Layer: 0
+  m_Name: AudioMananger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &503118668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503118667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a296592fb82447449fb8278d4ed026a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: stop
+    clip: {fileID: 8300000, guid: 75902953c9039b54d850aa9a6578468d, type: 3}
+    volume: 0.606
+    pitch: 1
+    source: {fileID: 0}
+  - name: move
+    clip: {fileID: 8300000, guid: 7dac0c6087b47a14d92b28f9e27bc9c4, type: 3}
+    volume: 0.852
+    pitch: 1
+    source: {fileID: 0}
+  - name: enemy
+    clip: {fileID: 8300000, guid: 9f28ab37e77464047a49e7a5e417a78b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: bgm
+    clip: {fileID: 8300000, guid: 44639aa5ae4ab064cba274f341d0b47e, type: 3}
+    volume: 0.718
+    pitch: 1
+    source: {fileID: 0}
+  - name: crash
+    clip: {fileID: 8300000, guid: f6ff7e88aac5e2f41b88584fb4b25652, type: 3}
+    volume: 0.775
+    pitch: 1
+    source: {fileID: 0}
+  - name: gameover
+    clip: {fileID: 8300000, guid: 8881618e9a7c8b34996bf5f09fccdd65, type: 3}
+    volume: 0.789
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &503118669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503118667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.118164, y: 6.522949, z: -9.449219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &531696247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 05d709b24a274fe4f8757bb8fd91b40f,
@@ -1151,7 +1225,7 @@ GameObject:
   - component: {fileID: 545526326}
   - component: {fileID: 545526322}
   m_Layer: 8
-  m_Name: Enemy (2)
+  m_Name: Enemy3
   m_TagString: Spaceman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

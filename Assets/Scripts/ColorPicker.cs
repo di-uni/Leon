@@ -337,7 +337,7 @@ public class ColorPicker : MonoBehaviour {
         float[] ranLab = rgb2lab(red2,green2,blue2);
         float distance =Mathf.Sqrt(Mathf.Pow((colorLab[0]-ranLab[0]),2f)+ Mathf.Pow((colorLab[1]-ranLab[1]),2f)+ Mathf.Pow((colorLab[2]-ranLab[2]),2f));
         
-        Debug.Log(distance);
+        //Debug.Log(distance);
         if(distance<52){
 			// Debug.Log("Matched");
 			Physics.IgnoreLayerCollision(8,9,true);
