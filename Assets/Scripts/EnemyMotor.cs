@@ -51,8 +51,8 @@ private CharacterController controller;
     //충돌, 숨을떄 쓴다
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {     
-        if(hit.gameObject.tag == "Enemy") {
-            
+        if(hit.gameObject.tag == "Player") {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().OnDeath();
         }
     } 
 }

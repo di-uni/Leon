@@ -338,8 +338,13 @@ public class ColorPicker : MonoBehaviour {
         float distance =Mathf.Sqrt(Mathf.Pow((colorLab[0]-ranLab[0]),2f)+ Mathf.Pow((colorLab[1]-ranLab[1]),2f)+ Mathf.Pow((colorLab[2]-ranLab[2]),2f));
         
         Debug.Log(distance);
-        if(distance<24){Debug.Log("Matched");}
-        else Debug.Log("Not matched");
+        if(distance<52){
+			// Debug.Log("Matched");
+			Physics.IgnoreLayerCollision(8,9,true);
+
+		}
+		else Physics.IgnoreLayerCollision(8,9,false);
+        // else Debug.Log("Not matched");
         //Debug.Log(activeTiles.Count+"this is tile");
     }
     
@@ -365,7 +370,8 @@ public class ColorPicker : MonoBehaviour {
         float FY =Y>0.008856f ? Mathf.Pow(Y, 1.0f / 3.0f) : (7.787f * Y + 0.137931f);
         float FZ =Z>0.008856f ? Mathf.Pow(Z, 1.0f / 3.0f) : (7.787f * Z + 0.137931f);
 
-        arr[0] = Y > 0.008856f ? (116.0f * FY -16.0f) : (903.3f *Y);
+        //arr[0] = Y > 0.008856f ? (116.0f * FY -16.0f) : (903.3f *Y);
+		arr[0] = 116.0f * FY -16.0f;
         arr[1] = 500f * (FX-FY);
         arr[2] = 200f * (FY-FZ);
         

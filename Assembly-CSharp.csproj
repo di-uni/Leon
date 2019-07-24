@@ -65,6 +65,7 @@
      <Compile Include="Assets\AurynSky\Forest Pack\Scripts\WheelController.cs" />
      <Compile Include="Assets\Scripts\AnimatorController.cs" />
      <Compile Include="Assets\Scripts\cameraMotor.cs" />
+     <Compile Include="Assets\Scripts\cameraMotor2.cs" />
      <Compile Include="Assets\Scripts\ColorPicker.cs" />
      <Compile Include="Assets\Scripts\CompareColor.cs" />
      <Compile Include="Assets\Scripts\DeathMenu.cs" />

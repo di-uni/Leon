@@ -51,16 +51,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758ad9307e0bbbb4593a97c98fce9da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorSpace: {fileID: 2800000, guid: 04acd02c44c005e4097e6f762b133153, type: 3}
+  colorSpace: {fileID: 2800000, guid: 184b2b51971910d44b35787e489875f7, type: 3}
   alphaGradient: {fileID: 0}
   Title: Color Picker
   startPos: {x: 20, y: 20}
   receiver: {fileID: 0}
+  receiver1: {fileID: 0}
+  receiver2: {fileID: 0}
   colorSetFunctionName: OnSetColor
   colorGetFunctionName: OnGetColor
   useExternalDrawer: 1
   drawOrder: 0
-  SelectedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!223 &3628807550063360901
 Canvas:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 04acd02c44c005e4097e6f762b133153, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 184b2b51971910d44b35787e489875f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

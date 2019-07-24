@@ -48,10 +48,10 @@ public class PlayerMotor : MonoBehaviour
             moveVector.x = Input.GetAxisRaw("Horizontal")*speed;
             moveVector.y = verticalVelocity;
             if (Input.GetMouseButton (0)){
-                if ((Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > Screen.height /4) || (Input.mousePosition.x > 2* Screen.width / 3 && Input.mousePosition.y < Screen.height /4)){
+                if ((Input.mousePosition.x > Screen.width / 2 && Input.mousePosition.y > Screen.height /4 && Input.mousePosition.y < 3* Screen.height /4) || (Input.mousePosition.x > 2* Screen.width / 3 && Input.mousePosition.y < Screen.height /4)){
                     moveVector.x = speed;
                 }
-                else if ((Input.mousePosition.x < Screen.width / 2 && Input.mousePosition.y > Screen.height / 4) || (Input.mousePosition.x < Screen.width / 3 && Input.mousePosition.y < Screen.height /4))
+                else if ((Input.mousePosition.x < Screen.width / 2 && Input.mousePosition.y > Screen.height / 4 && Input.mousePosition.y < 3* Screen.height /4) || (Input.mousePosition.x < Screen.width / 3 && Input.mousePosition.y < Screen.height /4))
                 {
                     moveVector.x = -speed;
                 }
@@ -82,22 +82,22 @@ public class PlayerMotor : MonoBehaviour
     //충돌, 숨을떄 쓴다
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.gameObject.tag == "Enemy")
+        if(hit.collider.gameObject.tag == "Spaceman" || hit.gameObject.tag == "Spaceman"){
             Death();
+            Debug.Log("hit");
+        }
         
         if(hit.gameObject.tag=="Empty"){
             //Debug.Log("sdfsjlfjs");
-            if(Input.GetKeyDown("space")){
                 Color blockcolor = hit.gameObject.GetComponentInParent<MeshRenderer>().material.color;
                 //Debug.Log(blockcolor);
                 ColorPicker colorPicker = new ColorPicker();
                 colorPicker.CompareColor(blockcolor);
-            }
-        }        
+            }        
     }
 
 
-    private void Death()
+    public void Death()
     {
         isDead = true;
         GetComponent<Score>().OnDeath();

@@ -5,6 +5,7 @@ SceneListBegin?
 Assets/_Scenes/Menu.unity
 Assets/_Scenes/LeonPrac.unity
 SceneListEnd?
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.cameraMotor2
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.Rotator
 86574ae73a2767cdc2e31466864f19be Assembly-CSharp.dll:.ColorPicker
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -119,6 +120,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.EnemyMotor
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 9669178b8ee47e79141ed8519e9595fb Assembly-CSharp.dll:.MaterialMover
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GM
@@ -152,6 +154,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 8931065b6b640c66c20127cdea5b70a8 Assembly-CSharp.dll:.moveorb
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Freeeze
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
