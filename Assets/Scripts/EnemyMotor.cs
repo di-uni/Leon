@@ -47,9 +47,14 @@ private CharacterController controller;
         if(enemy1z-playerz>Random.Range(64,128)){
             //music start
             FindObjectOfType<AudioManager>().Play("enemy");
+            FindObjectOfType<AudioManager>().SetVolume("bgm", 0.2f);
             GameObject.Find("Enemy").transform.position=new Vector3(0,1,playerz-64);
             GameObject.Find("Enemy2").transform.position=new Vector3(1,1,playerz-64);
             GameObject.Find("Enemy3").transform.position=new Vector3(-1,1,playerz-64);
+        }
+
+        else if(enemy1z-playerz > 0){
+            FindObjectOfType<AudioManager>().SetVolume("bgm", 0.7f);
         }
         moveVector.z = speed;
         controller.Move(moveVector * Time.deltaTime);
