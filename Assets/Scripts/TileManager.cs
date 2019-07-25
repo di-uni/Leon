@@ -34,7 +34,7 @@ public class TileManager : MonoBehaviour
     {
         if((playerTransform.position.z-safeZone) > (spawnZ - amnTilesOnScreen *tileLength)){
             SpawnTile();
-            //DeleteTile();
+            DeleteTile();
         }
     }
 

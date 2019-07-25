@@ -70,6 +70,7 @@ private CharacterController controller;
     {     
         if(hit.gameObject.tag == "Player") {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().OnDeath();
+            Debug.Log("crash");
         }
     } 
 }
