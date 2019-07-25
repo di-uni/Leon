@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 14180517}
   - component: {fileID: 14180520}
   - component: {fileID: 14180521}
-  - component: {fileID: 14180516}
   m_Layer: 8
   m_Name: Enemy2
   m_TagString: Spaceman
@@ -133,22 +132,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &14180516
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14180515}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &14180517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1232,7 +1215,6 @@ GameObject:
   - component: {fileID: 545526323}
   - component: {fileID: 545526326}
   - component: {fileID: 545526327}
-  - component: {fileID: 545526322}
   m_Layer: 8
   m_Name: Enemy3
   m_TagString: Spaceman
@@ -1240,22 +1222,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &545526322
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545526321}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &545526323
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2235,7 +2201,6 @@ GameObject:
   - component: {fileID: 1479563793}
   - component: {fileID: 1479563787}
   - component: {fileID: 1479563790}
-  - component: {fileID: 1479563794}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2319,7 +2284,7 @@ BoxCollider:
   m_GameObject: {fileID: 1479563786}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 4, z: 2}
   m_Center: {x: 0, y: 2, z: -1}
@@ -2364,22 +2329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 854791596}
   deathMenu: {fileID: 2078128403}
---- !u!54 &1479563794
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479563786}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!4 &1543665592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400060, guid: 90dac3abf1179b342b84e3c83039fa77,
@@ -2502,7 +2451,7 @@ Camera:
   m_GameObject: {fileID: 1625445140}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -2542,13 +2491,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625445140}
-  m_LocalRotation: {x: 0.28146952, y: 0.0034597868, z: 0.0012610527, w: 0.95956314}
-  m_LocalPosition: {x: 0, y: 4.03, z: -4.45}
+  m_LocalRotation: {x: 0.20051365, y: 0.0033426443, z: 0.0015450274, w: 0.97968405}
+  m_LocalPosition: {x: -0.01, y: 4.45, z: -4.36}
   m_LocalScale: {x: 1, y: 0.974938, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 32.695, y: 0.5, z: 0.29700002}
+  m_LocalEulerAnglesHint: {x: 23.133001, y: 0.44700003, z: 0.272}
 --- !u!114 &1625445144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2836,7 +2785,6 @@ GameObject:
   - component: {fileID: 2005844347}
   - component: {fileID: 2005844351}
   - component: {fileID: 2005844350}
-  - component: {fileID: 2005844346}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Spaceman
@@ -2844,22 +2792,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &2005844346
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005844345}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &2005844347
 MeshRenderer:
   m_ObjectHideFlags: 0
