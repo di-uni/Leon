@@ -27,14 +27,12 @@ public class AnimatorController : MonoBehaviour
             {
                 anim.SetTrigger("StartSit");
                 isSit = true;
-                print("animator sit");
             }
 
             else if (Input.mousePosition.y < Screen.height / 4 && Input.mousePosition.x > Screen.width / 3 && Input.mousePosition.x < 2 * Screen.width / 3 && isSit)
             {
                 anim.SetTrigger("StandUp");
                 isSit = false;
-                print("animator stand up");
             }
         }
     }

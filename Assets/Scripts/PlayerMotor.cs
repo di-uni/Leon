@@ -13,6 +13,7 @@ public class PlayerMotor : MonoBehaviour
     private float animationDuration = 3.0f;
     private float startTime;
     private bool isDead = false;
+    public static Color blockcolor;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +75,8 @@ public class PlayerMotor : MonoBehaviour
 
         controller.Move(moveVector * Time.deltaTime);
 
-
+        ColorPicker colorPicker = new ColorPicker();
+        colorPicker.CompareColor(blockcolor);
         
     }
     public void SetSpeed(float modifier)
@@ -91,12 +93,18 @@ public class PlayerMotor : MonoBehaviour
             Debug.Log("hit");
         }
         
+        if(hit.collider.gameObject.tag == "Enemy" || hit.gameObject.tag == "Enemy"){
+            FindObjectOfType<AudioManager>().Play("crash");
+            Death();
+            Debug.Log("hit");
+        }
+
         if(hit.gameObject.tag=="Empty"){
             //Debug.Log("sdfsjlfjs");
-                Color blockcolor = hit.gameObject.GetComponentInParent<MeshRenderer>().material.color;
-                //Debug.Log(blockcolor);
-                ColorPicker colorPicker = new ColorPicker();
-                colorPicker.CompareColor(blockcolor);
+                blockcolor = hit.gameObject.GetComponentInParent<MeshRenderer>().material.color;
+                
+                //Debug.Log(blockcolor.r + " "+ blockcolor.g+ " "+ blockcolor.b );
+                
             }        
     }
 

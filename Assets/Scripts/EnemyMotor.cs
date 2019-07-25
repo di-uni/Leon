@@ -18,6 +18,8 @@ private CharacterController controller;
         controller = GetComponent<CharacterController>();
         startTime = Time.time;
         moveVector.z= speed;
+        FindObjectOfType<AudioManager>().Play("enemy");
+        FindObjectOfType<AudioManager>().SetVolume("bgm", 0.2f);
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ private CharacterController controller;
         
         if(enemy1z-playerz>Random.Range(64,128)){
             //music start
+           // Debug.Log("HI");
             FindObjectOfType<AudioManager>().Play("enemy");
             FindObjectOfType<AudioManager>().SetVolume("bgm", 0.2f);
             GameObject.Find("Enemy").transform.position=new Vector3(0,1,playerz-64);
@@ -62,15 +65,17 @@ private CharacterController controller;
     }
     public void SetSpeed(float modifier)
     {
-        speed = 10.0f +modifier;
+        speed = 15.0f +modifier;
     }
     
     //충돌, 숨을떄 쓴다
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {     
-        if(hit.gameObject.tag == "Player") {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().OnDeath();
-            Debug.Log("crash");
+        if(hit.gameObject.tag == "Player"|| hit.collider.gameObject.tag=="Player") {
+            if (GameObject.FindGameObjectWithTag("Player") != null){
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Score>().OnDeath();
+                Debug.Log("crash");
+            }
         }
     } 
 }

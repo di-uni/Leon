@@ -7,7 +7,6 @@ TagManager:
   - Enemy
   - Empty
   - Spaceman
-  - Player2
   layers:
   - Default
   - TransparentFX

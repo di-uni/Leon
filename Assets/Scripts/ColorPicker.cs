@@ -316,14 +316,7 @@ public class ColorPicker : MonoBehaviour {
 	}
 
 	void Update(){
-		
-		// if(Input.GetKeyDown("space")){
-		// 	Vector3 position = GameObject.FindGameObjectWithTag("Player").transform.position;
-        //     // Debug.Log(SelectedColor+"this is color");
-        //     //tileManager.CheckColor(SelectedColor,position);
-		// 	PlayerMotor playerMotor = new PlayerMotor();
-		// 	playerMotor.CheckColor(SelectedColor,position);
-        // }
+		SetColor(SelectedColor);
     }
 
 	public void CompareColor(Color blockcolor){
@@ -334,18 +327,16 @@ public class ColorPicker : MonoBehaviour {
         float green2 =blockcolor.g;
         float blue2 =blockcolor.b;
         float[] colorLab = rgb2lab(red,green,blue);
+		//Debug.Log("charactercolor"+red+" "+green+" "+blue);
         float[] ranLab = rgb2lab(red2,green2,blue2);
         float distance =Mathf.Sqrt(Mathf.Pow((colorLab[0]-ranLab[0]),2f)+ Mathf.Pow((colorLab[1]-ranLab[1]),2f)+ Mathf.Pow((colorLab[2]-ranLab[2]),2f));
-        
-        //Debug.Log(distance);
+		//Debug.Log("tilecolor"+red2+" "+green2+" "+blue2);
+		//Debug.Log(distance);
         if(distance<52){
-			// Debug.Log("Matched");
 			Physics.IgnoreLayerCollision(8,9,true);
 
 		}
 		else Physics.IgnoreLayerCollision(8,9,false);
-        // else Debug.Log("Not matched");
-        //Debug.Log(activeTiles.Count+"this is tile");
     }
     
     static float Gamma(float x){

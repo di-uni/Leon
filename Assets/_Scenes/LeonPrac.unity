@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 14180519}
   - component: {fileID: 14180518}
   - component: {fileID: 14180517}
-  - component: {fileID: 14180521}
   - component: {fileID: 14180520}
+  - component: {fileID: 14180521}
   - component: {fileID: 14180516}
   m_Layer: 8
   m_Name: Enemy2
@@ -133,19 +133,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &14180516
-BoxCollider:
+--- !u!54 &14180516
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14180515}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!23 &14180517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -217,8 +220,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.6
+  m_Height: 3
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -267,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefabs:
   - {fileID: 6237452572733693531, guid: bc8dd36772f433f4b816990f2dcaa029, type: 3}
-  - {fileID: 2175384518034254883, guid: edf0f3cfe63f1f74492adbc78b31a85a, type: 3}
+  - {fileID: 7426226845528227333, guid: ffc9688ee6179a047b2db71e28941c85, type: 3}
   - {fileID: 345044325976389114, guid: 415501991be88b740a0686f30872a4ed, type: 3}
   - {fileID: 7381304648532128595, guid: e36cf16d92f362347ac27e5c2077892c, type: 3}
   - {fileID: 1015492423298681127, guid: 7ac7f5744b8b62a4793b934a0d4c9c99, type: 3}
@@ -1142,31 +1145,37 @@ MonoBehaviour:
     volume: 0.606
     pitch: 1
     source: {fileID: 0}
+    loop: 0
   - name: move
     clip: {fileID: 8300000, guid: 7dac0c6087b47a14d92b28f9e27bc9c4, type: 3}
     volume: 0.852
     pitch: 1
     source: {fileID: 0}
+    loop: 0
   - name: enemy
     clip: {fileID: 8300000, guid: 9f28ab37e77464047a49e7a5e417a78b, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
+    loop: 0
   - name: bgm
     clip: {fileID: 8300000, guid: 44639aa5ae4ab064cba274f341d0b47e, type: 3}
     volume: 0.718
     pitch: 1
     source: {fileID: 0}
+    loop: 1
   - name: crash
     clip: {fileID: 8300000, guid: f6ff7e88aac5e2f41b88584fb4b25652, type: 3}
     volume: 0.775
     pitch: 1
     source: {fileID: 0}
+    loop: 0
   - name: gameover
     clip: {fileID: 8300000, guid: 8881618e9a7c8b34996bf5f09fccdd65, type: 3}
     volume: 0.789
     pitch: 1
     source: {fileID: 0}
+    loop: 0
 --- !u!4 &503118669
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,7 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758ad9307e0bbbb4593a97c98fce9da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorSpace: {fileID: 2800000, guid: 184b2b51971910d44b35787e489875f7, type: 3}
+  colorSpace: {fileID: 2800000, guid: 44e5fb6d5d773dd47b096cd31771424e, type: 3}
   alphaGradient: {fileID: 2800000, guid: 8a9074eea03f4ee408c343c4c45447d7, type: 3}
   Title: 
   startPos: {x: 20, y: 20}
@@ -1221,8 +1230,8 @@ GameObject:
   - component: {fileID: 545526325}
   - component: {fileID: 545526324}
   - component: {fileID: 545526323}
-  - component: {fileID: 545526327}
   - component: {fileID: 545526326}
+  - component: {fileID: 545526327}
   - component: {fileID: 545526322}
   m_Layer: 8
   m_Name: Enemy3
@@ -1231,19 +1240,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &545526322
-BoxCollider:
+--- !u!54 &545526322
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545526321}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!23 &545526323
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1315,8 +1327,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.6
+  m_Height: 3
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -1907,101 +1919,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854791594}
   m_CullTransparentMesh: 0
---- !u!1 &1000750299
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1000750303}
-  - component: {fileID: 1000750302}
-  - component: {fileID: 1000750301}
-  - component: {fileID: 1000750300}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Player2
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1000750300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000750299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a4c6b00f15ca394b93b71a63ca6288a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!81 &1000750301
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000750299}
-  m_Enabled: 1
---- !u!20 &1000750302
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000750299}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1000750303
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000750299}
-  m_LocalRotation: {x: 0.0000071736044, y: 0.9887396, z: -0.14964683, w: 0.000047397105}
-  m_LocalPosition: {x: 0, y: 3, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 17.213001, y: 90179.99, z: 0}
 --- !u!1 &1114159104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,6 +2235,7 @@ GameObject:
   - component: {fileID: 1479563793}
   - component: {fileID: 1479563787}
   - component: {fileID: 1479563790}
+  - component: {fileID: 1479563794}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -2349,7 +2267,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 4
-  m_Radius: 1
+  m_Radius: 1.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
@@ -2446,6 +2364,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 854791596}
   deathMenu: {fileID: 2078128403}
+--- !u!54 &1479563794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479563786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!4 &1543665592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400060, guid: 90dac3abf1179b342b84e3c83039fa77,
@@ -2568,7 +2502,7 @@ Camera:
   m_GameObject: {fileID: 1625445140}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -2583,7 +2517,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 92.8
+  field of view: 122
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2608,13 +2542,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625445140}
-  m_LocalRotation: {x: 0.18846986, y: 0, z: 0, w: 0.982079}
-  m_LocalPosition: {x: 0, y: 4, z: -4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.28146952, y: 0.0034597868, z: 0.0012610527, w: 0.95956314}
+  m_LocalPosition: {x: 0, y: 4.03, z: -4.45}
+  m_LocalScale: {x: 1, y: 0.974938, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 21.727, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 32.695, y: 0.5, z: 0.29700002}
 --- !u!114 &1625445144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2900,8 +2834,8 @@ GameObject:
   - component: {fileID: 2005844349}
   - component: {fileID: 2005844348}
   - component: {fileID: 2005844347}
-  - component: {fileID: 2005844350}
   - component: {fileID: 2005844351}
+  - component: {fileID: 2005844350}
   - component: {fileID: 2005844346}
   m_Layer: 8
   m_Name: Enemy
@@ -2910,19 +2844,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2005844346
-BoxCollider:
+--- !u!54 &2005844346
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005844345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 3, z: 1.5}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!23 &2005844347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3006,8 +2943,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.6
+  m_Height: 3
+  m_Radius: 1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
